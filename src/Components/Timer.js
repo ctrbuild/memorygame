@@ -41,14 +41,14 @@ export default function Timer(){
     let finalTime = String(("0" + Math.floor((time % 3600) / 60)).slice(-2)) + ":" + String(("0" + time % 60).slice(-2))
     return (
         <div className="Timer">
-            <h1 id="time">
+            <h2 id="time">
                 {/* <span>{("0" + Math.floor((time/60000) % 60)).slice(-2)}:</span>
                 <span>{("0" + Math.floor((time/1000) % 60)).slice(-2)}</span> */}
                 {/* <span>{("0" + (time/10) % 1000).slice(-2)}</span>
                 {/* <span>{time}</span> */}
                 <span>{("0" + Math.floor((time % 3600) / 60)).slice(-2)}:</span>
                  <span>{("0" + time % 60).slice(-2)}</span>
-            </h1>
+            </h2>
         </div>
     );
 }

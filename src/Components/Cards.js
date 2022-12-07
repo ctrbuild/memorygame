@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
 import Card from './Card'
+import EndGame from "../EndGame";
+
 
 export default function Cards(){
     const [cards, setCards] = useState([
@@ -23,12 +25,15 @@ export default function Cards(){
 
     const [previousCardState, setPreviousCardState] = useState(-1)
     const previousIndex = useRef(-1)
+    
+    const [gameFinished, setGameFinished] = useState(false);
 
     const matchCheck = (currentCard)=>{
         if(cards[currentCard].id === cards[previousCardState].id ){
             cards[previousCardState].status = 'active matched'
             cards[currentCard].status = 'active matched'
             setPreviousCardState(-1)
+            
 
         }else{
             cards[currentCard].status = 'active'
@@ -42,6 +47,13 @@ export default function Cards(){
             }, 1000);
 
         }
+        let matched = 0;
+        for(let i=0; i<16;i++){
+            if(cards[i].status === 'active matched')
+                matched = matched + 1
+        }
+        if(matched === 16)
+            setGameFinished(true);
     }
 
 
@@ -49,7 +61,12 @@ export default function Cards(){
         if(index !== previousIndex.current){
             if(cards[index].status === 'active matched'){
                 alert('already matched')
-            }else{
+            }
+            
+            
+            else{
+
+
                 if(previousCardState === -1){
                     previousIndex.current = index
                     cards[index].status = 'active'
@@ -69,12 +86,18 @@ export default function Cards(){
         }
     }
 
+
     return (
         <div className="container">
+            
             {cards.map((card, index)=>{
                 return <Card card={card} key={index} index={index} clickhandler={clickhandler}/>
             })}
-        
+        {gameFinished && (
+        <EndGame
+          
+        />
+      )}
         </div>
     );
 }

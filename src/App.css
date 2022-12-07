@@ -36,3 +36,57 @@
     transform: rotate(360deg);
   }
 }
+
+.end-game-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #61dafb;
+}
+
+
+
+.win-text {
+  color: white;
+  font-size: 5rem;
+  line-height: 100px;
+}
+
+.win-text1 {
+  color: white;
+  font-size: 3rem;
+  line-height: 100px;
+}
+
+
+
+
+
+/* CSS */
+.button-38 {
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  color: #3abefc;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 3rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
