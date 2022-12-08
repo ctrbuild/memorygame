@@ -21,7 +21,7 @@ function EndGame()  {
       client
         .post('', {
             user_name: firstName,
-            val: 1.212,
+            val: finalTime,
         }).then((response) => {
           console.log(response.data, response.code);
        });
@@ -36,7 +36,7 @@ function EndGame()  {
         addPosts();
         // axios.post('https://resonant-petal-370719.uc.r.appspot.com/addcard/', {user_name:firstName, val:90.8})
         console.log('firstName', firstName);
-        console.log(finalTime)
+        console.log(finalTime, typeof finalTime)
         setFirstName('');
     
         
