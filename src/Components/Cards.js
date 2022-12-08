@@ -36,6 +36,7 @@ export default function Cards(){
             
 
         }else{
+            // here's the flip timeout part
             cards[currentCard].status = 'active'
             setCards([...cards])
             setTimeout(()=>{
@@ -56,33 +57,47 @@ export default function Cards(){
             setGameFinished(true);
     }
 
-
+    // clickhandler for when a user clicks on a card
     const clickhandler = (index)=> {
         if(index !== previousIndex.current){
+            // card was already matched with another card
             if(cards[index].status === 'active matched'){
                 alert('already matched')
             }
-            
-            
             else{
-
-
-                if(previousCardState === -1){
-                    previousIndex.current = index
-                    cards[index].status = 'active'
-                    setCards([...cards])
-                    setPreviousCardState(index)
-
-                }else{
-                    matchCheck(index)
+                // Have it where they can be only 2 active cards (sometimes users can click 3, bugs the game out)
+                // count cards, use a counter to keep track -> prob can be optimized more?
+                //let active_count = 0;
+                // for(let i=0; i<16;i++){
+                //     if(cards[i].status === 'active')
+                //         active_count+=1
+                // }
+                // basically does the same thing above^
+                let active_count = cards.filter((card) => card.status == 'active').length;
+                // check if 2 or more cards have been chosen
+                if(active_count >= 2)
+                {
+                    // debug
+                    console.log("2 cards choosen!")
+                    //console.log("length of array= " + cards.filter((card) => card.status == 'active').length)
+                    // just reset the index
                     previousIndex.current=-1
-
                 }
+                // if the user has only chosen 1 - 2 cards
+                else{
+                    if(previousCardState === -1){
+                        previousIndex.current = index
+                        cards[index].status = 'active'
+                        setCards([...cards])
+                        setPreviousCardState(index)
+                    }else{
+                        matchCheck(index)
+                        previousIndex.current=-1
+                    }
             }
-
+            }
         }else{
             alert('card currently selected')
-
         }
     }
 
