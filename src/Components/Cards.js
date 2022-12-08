@@ -5,22 +5,22 @@ import EndGame from "../EndGame";
 
 export default function Cards(){
     const [cards, setCards] = useState([
-        {id:0, name: 'Bryan Canstron', status: '', img:'/images/01.jpg'},
-        {id:0, name: 'Bryan Canstron', status: '', img:'/images/01.jpg'},
-        {id:1, name: 'Bryan Canstron', status: '', img:'/images/02.jpg'},
-        {id:1, name: 'Bryan Canstron', status: '', img:'/images/02.jpg'},
+        {id:0, name: 'Bryan Canstron', status: '', img:'/images/01.png'},
+        {id:0, name: 'Bryan Canstron', status: '', img:'/images/01_1.png'},
+        {id:1, name: 'Bryan Canstron', status: '', img:'/images/02.png'},
+        {id:1, name: 'Bryan Canstron', status: '', img:'/images/02_2.png'},
         {id:2, name: 'Bryan Canstron', status: '', img:'/images/03.png'},
-        {id:2, name: 'Bryan Canstron', status: '', img:'/images/03.png'},
-        {id:3, name: 'Bryan Canstron', status: '', img:'/images/04.jpg'},
-        {id:3, name: 'Bryan Canstron', status: '', img:'/images/04.jpg'},
-        {id:4, name: 'Bryan Canstron', status: '', img:'/images/05.jpg'},
-        {id:4, name: 'Bryan Canstron', status: '', img:'/images/05.jpg'},
-        {id:5, name: 'Bryan Canstron', status: '', img:'/images/06.jpg'},
-        {id:5, name: 'Bryan Canstron', status: '', img:'/images/06.jpg'},
-        {id:6, name: 'Bryan Canstron', status: '', img:'/images/07.jpg'},
-        {id:6, name: 'Bryan Canstron', status: '', img:'/images/07.jpg'},
-        {id:7, name: 'Bryan Canstron', status: '', img:'/images/08.jpg'},
-        {id:7, name: 'Bryan Canstron', status: '', img:'/images/08.jpg'},
+        {id:2, name: 'Bryan Canstron', status: '', img:'/images/03_3.png'},
+        {id:3, name: 'Bryan Canstron', status: '', img:'/images/04.png'},
+        {id:3, name: 'Bryan Canstron', status: '', img:'/images/04_4.png'},
+        {id:4, name: 'Bryan Canstron', status: '', img:'/images/05.png'},
+        {id:4, name: 'Bryan Canstron', status: '', img:'/images/05_5.png'},
+        {id:5, name: 'Bryan Canstron', status: '', img:'/images/06.png'},
+        {id:5, name: 'Bryan Canstron', status: '', img:'/images/06_6.png'},
+        {id:6, name: 'Bryan Canstron', status: '', img:'/images/07.png'},
+        {id:6, name: 'Bryan Canstron', status: '', img:'/images/07_7.png'},
+        {id:7, name: 'Bryan Canstron', status: '', img:'/images/08.png'},
+        {id:7, name: 'Bryan Canstron', status: '', img:'/images/08_8.png'},
     ].sort(()=> Math.random()- 0.5))
 
     const [previousCardState, setPreviousCardState] = useState(-1)
@@ -44,7 +44,7 @@ export default function Cards(){
                 cards[previousCardState].status='unmatch'
                 setCards([...cards])
 
-            }, 1000);
+            }, 3000);
 
         }
         let matched = 0;
