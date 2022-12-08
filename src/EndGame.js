@@ -8,16 +8,20 @@ import { useEffect, useState } from "react";
 function EndGame()  {
     console.log('hello');
     var cookie = new Cookie();
-    var finalTime = cookie.get('playerTime');
+    // make this a const so it can't be changed
+    const finalTime = cookie.get('playerTime');
     console.log(finalTime)
     const [firstName, setFirstName] = useState('');
 
     const handleSubmit = event => {
         console.log('handleSubmit ran');
         event.preventDefault(); 
-    
+        
+        // submit info to DB
         console.log('firstName', firstName);
+        console.log(finalTime)
         setFirstName('');
+        
 };
 
     //setTimeout(cookie.remove('playerTime', { path: '/' }), 5000)
@@ -31,16 +35,16 @@ function EndGame()  {
         &nbsp;&nbsp;&nbsp;
 
   <div class="content">
-    <form class="subscription">
+    <form class="subscription" onSubmit={handleSubmit}>
 
       <input className="add-email" id="first_name" type="text" placeholder="Username" onChange={event => setFirstName(event.target.value)}
           value={firstName}
            /> 
-      <button className="submit-email" type="button">
+      <button className="submit-email" type="submit">
         <span class="before-submit">Submit</span>
         <span class="after-submit">Your time has been submitted!</span>
        </button>
-    </form>
+    </form >
   </div>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button className="button-38" role="button" onClick={event => window.location.reload()} >Play Again </button>
