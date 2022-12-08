@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Admin from "./Admin";
 
 export default function Login() {
-    
-    let navigate = useNavigate(); 
+const navigate = useNavigate();
 
 const [emailInput, setEmail] = useState('');
 const [passwordInput, setPassword] = useState('');
@@ -26,6 +25,7 @@ const [passwordInput, setPassword] = useState('');
         
         const token = '123456abcdef';
         sessionStorage.setItem('auth-token', token);
+        navigate("/Admin")
 
 
     } else {
