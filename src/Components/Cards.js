@@ -45,7 +45,7 @@ export default function Cards(){
                 cards[previousCardState].status='unmatch'
                 setCards([...cards])
 
-            }, 3000);
+            }, 2000);
 
         }
         let matched = 0;

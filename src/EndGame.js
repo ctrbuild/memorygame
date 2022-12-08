@@ -3,7 +3,7 @@
 import React from "react";
 import Cookie from 'universal-cookie';
 import { useEffect, useState } from "react";
-
+import axios from 'axios'
 
 function EndGame()  {
     console.log('hello');
@@ -13,16 +13,35 @@ function EndGame()  {
     console.log(finalTime)
     const [firstName, setFirstName] = useState('');
 
+    const client = axios.create({
+      baseURL: 'https://resonant-petal-370719.uc.r.appspot.com/addscore/' 
+    });
+    
+    const addPosts = () => {
+      client
+        .post('', {
+            user_name: firstName,
+            val: 1.212,
+        }).then((response) => {
+          console.log(response.data, response.code);
+       });
+      
+      }
+
     const handleSubmit = event => {
         console.log('handleSubmit ran');
         event.preventDefault(); 
         
         // submit info to DB
+        addPosts();
+        // axios.post('https://resonant-petal-370719.uc.r.appspot.com/addcard/', {user_name:firstName, val:90.8})
         console.log('firstName', firstName);
         console.log(finalTime)
         setFirstName('');
+    
         
 };
+   
 
     //setTimeout(cookie.remove('playerTime', { path: '/' }), 5000)
   return (
