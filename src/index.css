@@ -12,7 +12,7 @@ body {
 
 h1 { color:rgb(43, 152, 248); font-family: 'Lato', sans-serif; font-size: 80px; font-weight: 300; line-height: 140px; margin: 0 0 0px; }
 h2 { color:rgb(43, 152, 248); font-family: 'Lato', sans-serif; font-size: 30px; font-weight: 300; line-height: 25px; margin: 0 0 10px; }
-h3 { color:rgb(250, 253, 255); font-family: 'Lato', sans-serif; font-size: 30px; font-weight: 300; line-height: 25px; margin: 0 0 10px; }
+h3 { color:rgb(250, 253, 255); font-family: 'Lato', sans-serif; font-size: 30px; font-weight: 300; line-height: 50px; margin: 0 0 10px; }
 
 
 .container{
