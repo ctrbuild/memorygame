@@ -68,7 +68,7 @@ function EndGame()  {
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button className="button-38" role="button" onClick={event => window.location.reload()} >Play Again </button>
         &nbsp;&nbsp;&nbsp;
-        <button className="button-38" role="button1">Scoreboard</button>
+        <button className="button-38" role="button1" onClick={event => window.location.reload()}>Scoreboard </button>
 
     </div>  );
 }
