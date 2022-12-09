@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import Card from './Card'
+
 import EndGame from "../EndGame";
 
 
@@ -103,8 +104,9 @@ export default function Cards(){
 
 
     return (
+
+        
         <div className="container">
-            
             {cards.map((card, index)=>{
                 return <Card card={card} key={index} index={index} clickhandler={clickhandler}/>
             })}
