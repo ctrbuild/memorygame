@@ -25,7 +25,8 @@ function EndGame()  {
       client
         .post('', {
             user_name: firstName,
-            val: finalTime,
+            val: parseInt(finalTime.split(":")[0]*60) + parseInt(finalTime.split(":")[1]),
+            
         }).then((response) => {
           console.log(response.data, response.code);
        });

@@ -12,7 +12,7 @@ function Admin() {
   });
   
   useEffect(() => {
-    client.get('?_limit=10').then((response) => {
+    client.get('?_limit=100').then((response) => {
        setPosts(response.data);
     });
   }, []);
