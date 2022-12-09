@@ -7,6 +7,8 @@ import Login from "./Components/login";
 import EndGame from "./EndGame";
 import Home from "./Components/Home";
 import Admin from "./Components/Admin";
+import Scoreboard from "./Components/Scoreboard";
+
 
 function App() {
     const [state, setState] = useState(0)
@@ -18,6 +20,8 @@ function App() {
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/EndGame" element={<EndGame />}></Route>
                     <Route path="/Admin" element={<Admin />}></Route>
+                    <Route path="/Scoreboard" element={<Scoreboard />}></Route>
+
                 </Routes>
             </BrowserRouter>
         </div>
