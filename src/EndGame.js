@@ -4,6 +4,8 @@ import React from "react";
 import Cookie from 'universal-cookie';
 import { useEffect, useState } from "react";
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
+
 
 function EndGame()  {
     console.log('hello');
@@ -12,6 +14,8 @@ function EndGame()  {
     const finalTime = cookie.get('playerTime');
     console.log(finalTime)
     const [firstName, setFirstName] = useState('');
+    const navigate = useNavigate();
+
 
     const client = axios.create({
       baseURL: 'https://resonant-petal-370719.uc.r.appspot.com/addscore/' 
@@ -41,6 +45,12 @@ function EndGame()  {
     
         
 };
+
+function handleSubmit1(event) {
+    event.preventDefault();
+    navigate("/Scoreboard");
+
+  };
    
 
     //setTimeout(cookie.remove('playerTime', { path: '/' }), 5000)
@@ -68,7 +78,7 @@ function EndGame()  {
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button className="button-38" role="button" onClick={event => window.location.reload()} >Play Again </button>
         &nbsp;&nbsp;&nbsp;
-        <button className="button-38" role="button1" onClick={event => window.location.reload()}>Scoreboard </button>
+        <button className="button-38" role="button1" onClick={handleSubmit1}>Scoreboard </button>
 
     </div>  );
 }

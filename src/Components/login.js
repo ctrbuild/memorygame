@@ -36,6 +36,7 @@ const [passwordInput, setPassword] = useState('');
 
   return (
     <div className="Login">
+      <h2>Admin Login</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
